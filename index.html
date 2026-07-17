@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفرقان ہوم میڈ کباب | بہترین اور لذیذ شامی کباب</title>
+    <!-- Google Fonts for Urdu Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0b462d; /* Professional Dark Green */
+            --primary-dark: #072e1e;
+            --accent-color: #e2b13c; /* Elegant Gold */
+            --bg-light: #f4fcf8;
+            --text-dark: #1b2e25;
+            --text-light: #ffffff;
+            --border-color: #e0ece6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .urdu-font {
+            font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', serif;
+            line-height: 2.2;
+            text-align: center;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100 { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent-color);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .logo span {
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .contact-header {
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .contact-header a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            background-color: rgba(255,255,255,0.1);
+            padding: 8px 18px;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-header a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            padding: 100px 5% 80px 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0.05;
+            background-image: radial-gradient(var(--accent-color) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            line-height: 1.6;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            color: #e0f2ea;
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: var(--primary-dark);
+            padding: 14px 45px;
+            font-size: 19px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(226, 177, 60, 0.3);
+        }
+
+        .cta-btn:hover {
+            background-color: #f3c250;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(226, 177, 60, 0.5);
+        }
+
+        .features {
+            padding: 80px 5%;
+            background-color: var(--text-light);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80px; height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: var(--bg-light);
+            padding: 40px 20px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            opacity: 0;
+            transform: translateY(30px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(11, 70, 45, 0.08);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .product-section {
+            padding: 80px 5%;
+            background-color: var(--bg-light);
+        }
+
+        .pricing-container {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .price-card {
+            background-color: var(--text-light);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .pack-title {
+            font-size: 26px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .custom-input-group {
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .custom-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #cbdcd2;
+            border-radius: 8px;
+            font-size: 18px;
+            text-align: center;
+            outline: none;
+        }
+
+        .custom-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .price-summary {
+            background-color: #eef9f3;
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 16px;
+            color: var(--primary-color);
+        }
+
+        .confirm-btn {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .confirm-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .order-section {
+            padding: 80px 5%;
+            background-color: var(--text-light);
+        }
+
+        .form-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: var(--bg-light);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .form-container p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: right;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #cbdcd2;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: var(--text-light);
+            color: var(--text-dark);
+            outline: none;
+            text-align: right;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+        }
+
+        .form-note {
+            font-size: 13px;
+            color: #ea5455;
+            margin-top: 8px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 60px 5% 40px 5%;
+            text-align: center;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .footer-contacts {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-contacts a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            background-color: rgba(255,255,255,0.05);
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-contacts a:hover {
+            color: var(--primary-dark);
+            background-color: var(--accent-color);
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #8fa39a;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background-color: var(--accent-color);
+            color: var(--primary-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 12px; text-align: center; }
+            .contact-header { text-align: center; font-size: 12px; }
+            .hero { padding: 60px 4% 50px 4%; }
+            .hero h1 { font-size: 28px; }
+            .hero p { font-size: 15px; }
+            .pricing-container { padding: 0 10px; }
+            .feature-grid { grid-template-columns: 1fr; padding: 0 10px; }
+            .form-container { padding: 25px 15px; margin: 0 10px; }
+            .footer-contacts { flex-direction: column; align-items: center; }
+            .footer-contacts a { width: 100%; max-width: 320px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo urdu-font">الفرقان <span>کباب</span></div>
+        <div class="contact-header urdu-font" style="font-size: 13px;">
+            بڑے آرڈر کے لیے پہلے آگاہ کریں: <a href="https://wa.me/923056217647?text=السلام علیکم، مجھے کباب کے آرڈر کے بارے میں رابطہ کرنا ہے" target="_blank">💬 03056217647</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge urdu-font">12 یا زائد کباب پر ہوم ڈیلیوری بالکل فری</span>
+            <h1 class="urdu-font">الفرقان ہوم میڈ شامی کباب</h1>
+            <p class="urdu-font">گھر کے صاف ستھرے، خالص اور انتہائی لذیذ فروزن چکن شامی کباب۔ اب کھائیں ایسا ذائقہ جو دل جیت لے، معیار کی مکمل ضمانت کے ساتھ۔</p>
+            <a href="#pricing-sec" class="cta-btn urdu-font">ابھی کباب منتخب کریں</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title urdu-font">ہماری خصوصیات</h2>
+        <div class="feature-grid">
+            <div class="feature-card" id="feat-1">
+                <span class="feature-icon">🏠</span>
+                <h3 class="urdu-font">100% ہوم میڈ</h3>
+                <p class="urdu-font">ہمارے کباب مکمل طور پر گھریلو طریقے سے تیار کیے جاتے ہیں تاکہ آپ کو اصلی اور خالص روایتی ذائقہ ملے۔</p>
+            </div>
+            <div class="feature-card" id="feat-2">
+                <span class="feature-icon">✨</span>
+                <h3 class="urdu-font">صفائی کا خاص خیال</h3>
+                <p class="urdu-font">ہم صحت بخش اور معیاری اجزاء کا انتخاب کرتے ہیں اور تیاری کے ہر مرحلے پر بہترین صفائی کو یقینی بناتے۔</p>
+            </div>
+            <div class="feature-card" id="feat-3">
+                <span class="feature-icon">🏍️</span>
+                <h3 class="urdu-font">ہوم ڈیلیوری کی سہولت</h3>
+                <p class="urdu-font">12 یا اس سے زائد کباب پر جلال پور جٹاں میں فری ڈیلیوری۔ 12 سے کم کباب پر صرف 50 روپے ڈیلیوری چارجز ہوں گے۔</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing-sec" class="product-section">
+        <div class="pricing-container">
+            <div class="price-card">
+                <div style="width: 100%;">
+                    <div class="pack-title urdu-font">کباب کی تعداد منتخب کریں</div>
+                    <p class="urdu-font" style="color: #666; margin-bottom: 10px;">کباب کی تعداد درج کریں (کم از کم 6 کباب):</p>
+                    <div class="custom-input-group">
+                        <input type="number" id="customKababQty" class="custom-input" min="6" placeholder="مثال: 6" oninput="calculateLivePrice()">
+                    </div>
+                    <p class="urdu-font" style="font-weight: bold; color: var(--primary-color);">قیمت: 50 روپے فی کباب</p>
+                    <p class="urdu-font" style="font-size: 13px; color: #ea5455; font-weight: bold;" id="customError"></p>
+                    
+                    <!-- Live Calculations Display -->
+                    <div id="calcSummary" class="price-summary urdu-font" style="display: none;">
+                        کباب کی قیمت: <span id="kababPriceText">0</span> روپے<br>
+                        ڈیلیوری چارجز: <span id="deliveryChargesText">0</span> روپے<br>
+                        <strong>کل بل: <span id="totalPriceText">0</span> روپے</strong>
+                    </div>
+
+                    <button id="confirmQtyBtn" class="confirm-btn urdu-font" onclick="confirmQuantity()">تعداد کنفرم کریں</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Form Section -->
+    <section id="order" class="order-section">
+        <div class="form-container">
+            <form id="kababOrderForm" style="display: none; animation: fadeInUp 0.5s ease both;">
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="fullName" class="urdu-font">آپ کا نام (پورا نام) *</label>
+                    <input type="text" id="fullName" class="form-control urdu-font" placeholder="اپنا نام یہاں لکھیں" required>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phoneNumber" class="urdu-font">موبائل نمبر *</label>
+                    <input type="tel" id="phoneNumber" class="form-control" placeholder="03XXXXXXXXX" required pattern="[0-9]{11}">
+                </div>
+
+                <!-- Complete Address -->
+                <div class="form-group">
+                    <label for="deliveryAddress" class="urdu-font">ڈیلیوری کا پتہ *</label>
+                    <textarea id="deliveryAddress" class="form-control urdu-font" rows="3" placeholder="اپنا مکمل پتہ یہاں درج کریں" required></textarea>
+                    <div class="form-note urdu-font">نوٹ: ڈیلیوری کی سہولت صرف جلال پور جٹاں کے لیے ہے۔ باہر کے کسٹمرز کو خود آ کر اپنا آرڈر حاصل کرنا ہوگا۔</div>
+                </div>
+
+                <!-- Hidden inputs to store calculated data -->
+                <input type="hidden" id="quantity" value="0">
+                <input type="hidden" id="kababsCost" value="0">
+                <input type="hidden" id="deliveryCost" value="0">
+                <input type="hidden" id="calculatedPrice" value="0">
+
+                <!-- Special Instructions -->
+                <div class="form-group">
+                    <label for="instructions" class="urdu-font">کوئی خاص ہدایت (اختیاری)</label>
+                    <textarea id="instructions" class="form-control urdu-font" rows="2" placeholder="اگر کوئی خاص بات بتانی ہو تو یہاں لکھیں..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn urdu-font">واٹس ایپ پر آرڈر بھیجیں 💬</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo urdu-font">الفرقان ہوم میڈ کباب</div>
+        <p class="urdu-font" style="margin-bottom: 10px;">محمدی مسجد نزد عبدالحق کالج، جلال پور جٹاں</p>
+        <p class="urdu-font" style="color: var(--accent-color); font-weight: bold; margin-bottom: 25px;">ہمارے کبابوں کے ذائقے اور معیار کی 100٪ ضمانت ہے!</p>
+        <div class="footer-contacts">
+            <a href="https://wa.me/923042467561?text=السلام علیکم، مجھے کباب کے آرڈر کے بارے میں رابطہ کرنا ہے" target="_blank" class="urdu-font">💬 مجاہد حمید: 03042467561</a>
+            <a href="https://wa.me/923056217647?text=السلام علیکم، مجھے کباب کے آرڈر کے بارے میں رابطہ کرنا ہے" target="_blank" class="urdu-font">💬 عبدالاحد: 03056217647</a>
+        </div>
+        <p class="copyright">&copy; 2026  الفرقان کباب۔ جملہ حقوق محفوظ ہیں۔</p>
+    </footer>
+
+    <script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }!);
+
+        // Live Validation and Pricing Calculation
+        function calculateLivePrice() {
+            const inputVal = document.getElementById('customKababQty').value;
+            const qty = parseInt(inputVal);
+            const errorDiv = document.getElementById('customError');
+            const summaryDiv = document.getElementById('calcSummary');
+
+            if (!inputVal || isNaN(qty) || qty < 6) {
+                errorDiv.innerText = "کم از کم 6 کباب ہونا لازمی ہیں!";
+                summaryDiv.style.display = 'none';
+                return false;
+            } else {
+                errorDiv.innerText = "";
+                
+                // Pricing Logic (50 Rs per Shami)
+                const kababCost = qty * 50;
+                // Free delivery on 12 or more, otherwise 50 Rs
+                const deliveryCost = (qty >= 12) ? 0 : 50;
+                const totalBill = kababCost + deliveryCost;
+
+                // Set values in display
+                document.getElementById('kababPriceText').innerText = kababCost;
+                document.getElementById('deliveryChargesText').innerText = deliveryCost === 0 ? "مفت" : deliveryCost;
+                document.getElementById('totalPriceText').innerText = totalBill;
+                summaryDiv.style.display = 'block';
+
+                // Store in hidden fields for form submission
+                document.getElementById('quantity').value = qty;
+                document.getElementById('kababsCost').value = kababCost;
+                document.getElementById('deliveryCost').value = deliveryCost;
+                document.getElementById('calculatedPrice').value = totalBill;
+
+                return true;
+            }
+        }
+
+        // Action when "Confirm Quantity" button is clicked (Go to Next Page/Form)
+        function confirmQuantity() {
+            const isValid = calculateLivePrice();
+            if (!isValid) return;
+
+            // Hide Pricing Section & Features to act like a Next Page
+            document.getElementById('pricing-sec').style.display = 'none';
+            if (document.querySelector('.features')) document.querySelector('.features').style.display = 'none';
+            if (document.querySelector('.hero')) document.querySelector('.hero').style.display = 'none';
+
+            // Show Form Smoothly
+            const form = document.getElementById('kababOrderForm');
+            form.style.display = 'block';
+            
+            document.getElementById('order').scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            setTimeout(() => {
+                document.getElementById('fullName').focus();
+            }, 500);
+        }
+
+        // Feature cards animation on scroll
+        const fCards = document.querySelectorAll('.feature-card');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fCards.forEach(card => observer.observe(card));
+
+        // Form Submit Handler (Send to Whatsapp)
+        document.getElementById('kababOrderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phoneNumber').value.trim();
+            const address = document.getElementById('deliveryAddress').value.trim();
+            const qty = parseInt(document.getElementById('quantity').value);
+            const kababsCost = parseInt(document.getElementById('kababsCost').value);
+            const deliveryCost = parseInt(document.getElementById('deliveryCost').value);
+            const totalPrice = parseInt(document.getElementById('calculatedPrice').value);
+            const extra = document.getElementById('instructions').value.trim();
+
+            // Dynamic Whatsapp text construction
+            let deliveryStatusText = (deliveryCost === 0) ? "مفت (12 کباب فری آفر)" : `Rs. ${deliveryCost}`;
+            let introductionText = `السلام علیکم، مجھے ${qty} ہوم میڈ شامی کباب آرڈر کرنے ہیں۔`;
+
+            let msg = `${encodeURIComponent(introductionText)}%0A%0A`;
+            msg += `*--- آرڈر کی تفصیلات ---*%0A`;
+            msg += `*نام:* ${encodeURIComponent(name)}%0A`;
+            msg += `*فون نمبر:* ${encodeURIComponent(phone)}%0A`;
+            msg += `*پتہ:* ${encodeURIComponent(address)}%0A`;
+            msg += `*تعداد:* ${qty} کباب%0A`;
+            msg += `*کباب کی قیمت:* Rs. ${kababsCost}%0A`;
+            msg += `*ڈیلیوری چارجز:* ${encodeURIComponent(deliveryStatusText)}%0A`;
+            msg += `*کل بل:* Rs. ${totalPrice}%0A`;
+            
+            if(extra) {
+                msg += `*خصوصی نوٹ:* ${encodeURIComponent(extra)}%0A`;
+            }
+            
+            msg += `%0Aمعیار کی 100٪ ضمانت!`;
+
+            const myWhatsappNumber = "923056217647"; 
+            window.open(`https://wa.me/${myWhatsappNumber}?text=${msg}`, '_blank');
+        });
+    </script>
+</body>
+</html>
+
